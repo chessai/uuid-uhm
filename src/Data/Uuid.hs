@@ -3,12 +3,21 @@
 
 module Data.Uuid
   ( Uuid(..)
+  , uuidToInteger
+  , integerToUuid
+  , uuidPlus
+  , uuidMinus
+  , uuidAnd
+  , uuidOr
+  , uuidXor
+  , uuidShift
   ) where
 
 import Control.DeepSeq (NFData)
 import Data.Aeson (ToJSON, FromJSON, ToJSONKey, FromJSONKey)
 import Data.Bits
 import Data.Hashable (Hashable)
+import Data.Semigroup
 import Data.Word (Word64)
 import GHC.Generics (Generic)
 import Web.PathPieces (PathPiece(..))
